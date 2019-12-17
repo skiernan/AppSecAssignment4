@@ -1,1 +1,15 @@
-
+version: "3.7"
+services:
+  webapp:
+    build:
+      context: ./dir
+      dockerfile: Dockerfile-alternate
+      args:
+        buildno: 1
+        
+        
+secrets:
+  my_first_secret:
+    file: ./secret_data
+  my_second_secret:
+    external: true
